@@ -11,12 +11,12 @@
         <h1>TP : v-if v-for </h1>
         <input v-model="article" type="text" placeHolder="Rajouter des articles...">
         <button @click="ajouter" class="btn btn-primary m-3">Ajouter</button>
-        <ul v-if="tabAchats.length!=0">Liste de courses :
-            <li v-show=affiche @click="supprimer(tabAchats,index)" v-for="(article,index) in tabAchats">{{article}}</li>
+        <ul v-show=affiche v-if="tabAchats.length!=0">Liste de courses :
+            <li  @click="supprimer(tabAchats,index)" v-for="(article,index) in tabAchats">{{article}}</li>
         </ul>
         <p v-else>Panier vide !</p>
         <button v-if=affiche==true @click="afficherListe" class="btn btn-secondary">Masquer Liste</button>
-        <button v-else=affiche==true @click="afficherListe" class="btn btn-success">Afficher Liste</button>
+        <button v-else @click="afficherListe" class="btn btn-success">Afficher Liste</button>
         <!-- script pour contacter VUE -->
         <script src="https://unpkg.com/vue@next"></script>
         <script src="script.js"></script>
